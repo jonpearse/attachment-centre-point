@@ -1,9 +1,9 @@
 <?php
 /*
     Plugin name:    Attachment centre-point selector
-    Plugin URI:     #
+    Plugin URI:     https://github.com/jonpearse/attachment-centre-point
     Description:    Allows the user to select a centre- or focal-point of an attached image.
-    Version:        1.0.0
+    Version:        0.0.0
     Author:         Jon Pearse
     Author URI:     https://jonpearse.net/
     License:        MIT
