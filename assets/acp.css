@@ -1,0 +1,117 @@
+/* ==========================================================================
+   # Image-related fields
+   ========================================================================== */
+/* wrapper element */
+.attachment-centre-point__wrapper {
+    position: relative;
+    margin:   0 0 20px;
+}
+    .attachment-centre-point__wrapper img {
+        margin: 0 !important;
+    }
+
+/* Focus indicator */
+.attachment-centre-point__focus {
+    position: absolute;
+    z-index:  1;
+
+    height:  30px;
+    width:   30px;
+    transform: translate(-50%, -50%);
+    border:  2px solid #000;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.2);
+    box-shadow: rgba(255,255,255,.5) 0 0 3px 0;
+
+    transition: all 50ms;
+}
+    .attachment-centre-point__focus:before,
+    .attachment-centre-point__focus:after {
+        content:  "";
+        display:  block;
+        position: absolute;
+
+        height: 120%;
+        width:  2px;
+        top:    -10%;
+        left:   calc(50% - 1px);
+
+        background: #000;
+        box-shadow: rgba(255,255,255,.2) 0 0 3px 0;
+    }
+    .attachment-centre-point__focus:after {
+        transform: rotate(90deg);
+    }
+
+/* Click-tracking overlay */
+.attachment-centre-point__overlay {
+    position: absolute;
+    z-index:  2;
+
+    top:      0;
+    left:     0;
+    height: 100%;
+    width:  100%;
+}
+
+/* ==========================================================================
+   # Form setup
+   ========================================================================== */
+
+/* fieldset */
+.attachment-centre-point__fieldset:after {
+    content: "";
+    display: table;
+    clear:   left;
+}
+
+.attachment-centre-point__outer-label span.alignleft[class] {
+    padding: 1px 0 0;
+    margin:  0;
+
+    font-weight: bold;
+}
+    .attachment-centre-point__outer-label span.required { display: none !important; }
+
+/* fields */
+.attachment-centre-point__field {
+    display: block;
+    float:   left;
+    box-sizing: border-box;
+
+    min-width: 8em;
+    padding-right: 1em;
+}
+
+/* label */
+.attachment-centre-point__label {
+    display: block;
+
+    margin: 0 0 .2em;
+}
+    .attachment-centre-point__label:after {
+        content: " *";
+        color: #F00;
+    }
+    .attachment-centre-point__label.-after {
+        display: inline-block;
+
+        margin:  0;
+        height:  26px;
+        padding: 0 .3em;
+        line-height: 26px;
+
+        background: rgba(255,255,255,.5);
+        border-top-right-radius:    2px;
+        border-bottom-right-radius: 2px;
+        border: 1px solid rgba(0,0,0,.15);
+        border-left: 0;
+    }
+    .attachment-centre-point__label.-after:after { display: none; }
+
+/* input */
+input.attachment-centre-point__input[class][class] {
+    float: left;
+    width: 5em;
+}
