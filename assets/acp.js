@@ -20,7 +20,11 @@
                 return false;
 
             // 1. find us an image and wrap it
-            buildImageDom();
+            if (!buildImageDom())
+            {
+                setInputsReadonly();
+                return false;
+            }
 
             // 2. munge the input DOM and hide the trigger
             if (!createInputDom())
@@ -43,6 +47,8 @@
 
             // 1. get the image
             var elImage = document.querySelector('#thumbnail-head-'+iId+' img, .attachment-details[data-id="'+iId+'"] .details-image');
+            if (elImage === null)
+                return false;
 
             // 2. if there’s a wrapper, just return stuff
             if (elImage.parentNode.className.indexOf('attachment-centre-point__wrapper') !== -1)
@@ -110,6 +116,15 @@
             // 7. classes
             elField.parentNode.parentNode.querySelector('th.label label').className += ' attachment-centre-point__outer-label';
             return true;
+        }
+
+        function setInputsReadonly()
+        {
+            // 1. set the field to be readonly
+            elField.setAttribute('readonly', true);
+
+            // 2. hide the trigger
+            $(elTrigger).parents('tr').eq(0).remove();
         }
 
         function fnHandleSliderChange(ev)

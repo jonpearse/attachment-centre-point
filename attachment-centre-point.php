@@ -9,7 +9,7 @@
     License:        MIT
 */
 
-namespace mrb\Navigator;
+namespace jdp\WP\AttachmentCentrePoint;
 
 if (!defined('WPINC'))
 {
